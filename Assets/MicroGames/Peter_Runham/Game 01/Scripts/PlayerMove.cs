@@ -6,6 +6,8 @@ namespace Assets.MicroGames.Peter_Runham
 {
     public class PlayerMove : MonoBehaviour
     {
+        public bool won = false;
+
         // Use this for initialization
         void Start()
         {
@@ -20,9 +22,12 @@ namespace Assets.MicroGames.Peter_Runham
 
         void Movement()
         {
-            int stirlingsPatience = 50;
-            Vector3 move = new Vector3(Input.GetAxis("Horizontal") / stirlingsPatience, Input.GetAxis("Vertical") / stirlingsPatience, 0);
-            transform.Translate(move);
+            if (!won)
+            {
+                int stirlingsPatience = 2;
+                Vector3 move = new Vector3(Input.GetAxisRaw("Horizontal") * stirlingsPatience, 0, 0);
+                transform.Translate(move);
+            }
         }
     }
 }
