@@ -11,13 +11,8 @@ namespace Assets.MicroGames.Peter_Runham2
         // Use this for initialization
         void Start()
         {
+            // Set initial verb
             GlobalGameManager.verb = "Drop!";
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
         }
     }
 }

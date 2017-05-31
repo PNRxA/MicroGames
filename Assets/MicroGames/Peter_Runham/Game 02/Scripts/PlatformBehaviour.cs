@@ -15,6 +15,7 @@ namespace Assets.MicroGames.Peter_Runham2
         // Use this for initialization
         void Start()
         {
+            // Set positions to lerp between
             pos1 = new Vector3(-6, transform.position.y, transform.position.z);
             pos2 = new Vector3(6, transform.position.y, transform.position.z);
         }
@@ -22,6 +23,7 @@ namespace Assets.MicroGames.Peter_Runham2
         // Update is called once per frame
         void Update()
         {
+            // If the button hasn't been pressed, allow movement
             if (!gm.hasPressed)
             {
                 Movement();
@@ -30,6 +32,7 @@ namespace Assets.MicroGames.Peter_Runham2
 
         void Movement()
         {
+            // Move between positions defined above
             transform.position = Vector3.Lerp(pos1, pos2, Mathf.PingPong(Time.time * speed, 1.0f));
         }
     }

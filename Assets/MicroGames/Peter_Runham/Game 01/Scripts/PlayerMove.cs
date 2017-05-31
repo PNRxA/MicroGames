@@ -17,6 +17,7 @@ namespace Assets.MicroGames.Peter_Runham
         // Use this for initialization
         void Start()
         {
+            // Set verb
             GlobalGameManager.verb = "STOP!";
             GlobalGameManager.ActivateSelectedScene();
         }
@@ -24,27 +25,28 @@ namespace Assets.MicroGames.Peter_Runham
         // Update is called once per frame
         void Update()
         {
+            // If the game is active allow movement
             if (GlobalGameManager.gameActive)
             {
                 Movement();
             }
-
+            // If teh game is active and the ball hasn't spawned, spawn the ball
             if (GlobalGameManager.gameActive && !ballSpawned)
             {
+                // Spawn ball
                 ballSpawned = true;
                 GameObject ballToDrop = Instantiate(ball, startPos);
+                // Set explosion prefab
                 ballToDrop.GetComponent<BallBehavior>().explosion = explosionPrefab;
             }
         }
 
         void Movement()
         {
-            //if (!won)
-            //{
+            // Move based on stirlings patience and also horizontal/vertical axis
             int stirlingsPatience = 7;
             Vector3 move = new Vector3(Input.GetAxisRaw("Horizontal") * stirlingsPatience, 0, 0);
             transform.Translate(move);
-            //}
         }
     }
 }
