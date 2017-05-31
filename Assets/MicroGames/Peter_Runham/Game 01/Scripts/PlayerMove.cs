@@ -17,6 +17,7 @@ namespace Assets.MicroGames.Peter_Runham
         // Use this for initialization
         void Start()
         {
+            GlobalGameManager.verb = "STOP!";
             GlobalGameManager.ActivateSelectedScene();
         }
 

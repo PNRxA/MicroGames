@@ -9,7 +9,7 @@ namespace StirlingMulvey
 {
     public class HubCountdown : MonoBehaviour
     {
-        float speedIncreaseScale = .1f;
+        float speedIncreaseScale = 1f;
         float maxGameSpeed = 3;
         public string[] countDownMessages;
 
